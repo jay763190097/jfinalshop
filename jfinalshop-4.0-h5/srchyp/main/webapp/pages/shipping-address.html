@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>管理收货地址</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><a href="#(contextPath)/member"><span>返回 </span></a></div><span class="host-title">地址管理</span><span></span>
+        </div>
+      </div>
+      <div class="title-space"></div>
+      <div>
+        #if(address !=null)
+        #for(x:address)
+        <div class="address dis-flex-between mb20" id="div#(x.id)" >
+          <div class="txt-left" >
+            <input class="dis-none" value="#(x.id)"></input>
+            <div class="customer"><span>#(x.consignee)</span><span>#(x.phone)</span>#if(x.is_default)<span class="tag-mr">默认</span>#end</div>
+            <div class="send-address">#(x.area_name) #(x.address)</div>
+          </div><a href="#(contextPath)/receiver/modifyAddress?id=#(x.id)"><img src="#(contextPath)/img/edit.svg" alt="" class="img-edit"></a>
+        </div>
+        #end
+        #end
+      </div>
+      <div class="nav-space"></div>
+      <a href="#(contextPath)/receiver/addAddress"><div class="nav confirm-pay">新增地址</div></a>
+    </div>
+    <script type="text/javascript" src="#(contextPath)/js/jquery-1.9.1.min.js"></script>
+    <script>
+      (function(){
+
+
+      })();
+
+      var timeOutEvent=0;
+      $(function(){
+          $(".txt-left").on({
+              touchstart: function(e){
+                  timeOutEvent = setTimeout("longPress()",1500);
+                  e.preventDefault();
+              },
+              touchmove: function(){
+                  clearTimeout(timeOutEvent);
+                  timeOutEvent = 0;
+              }
+          })
+      });
+
+
+      function longPress(){
+          timeOutEvent = 0;
+          var ch = $(".txt-left").find("input").first().val();
+          var conf = confirm("是否删除该地址？");
+          if(conf){
+              $.post("#(contextPath)/receiver/deleAddress",{"id":ch},function (data) {
+                  if (data.code == "1"){
+                      alert("删除成功");
+                      $("#div"+ch).remove();
+                  }else {
+                      alert("删除失败");
+                  }
+              })
+
+          }
+      }
+
+    </script>
+  </body>
+</html>

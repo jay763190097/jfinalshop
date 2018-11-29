@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>购物车</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <script>
+        var message = #(message);
+        if(message!=null){
+            alert(message);
+        }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="txt-center back-top border-bt"><span class="host-title sh-title">购物车</span></div>
+      </div>
+      <div class="title-space"></div>
+
+      <ul class="shopping-li" id="ur_1">
+      #if(cart!="1")
+        <input  data-type="cartkey" class="dis-none" value="#(cart.cart_key)" id="cart_key_1">
+        #for(x:cart.cartItems)
+        <li class="dis-flex-left" id="itm#(x.product_id)" >
+           <input  data-type="cartkey" class="dis-none" value="#(x.id)" id="items">
+            <div data-type="checkbox" class="iconfont check-box icon-check-more"></div>
+            <a  href="#(contextPath)/goods/detail?id=#(x.product_id)">
+          <img src="http://114.55.93.111:8080/jfinalshop-4.0-web#(x.image)" alt="" class="sh-img">
+          </a>
+            <div class="store-info">
+            <h4 class="sh-shops">#(x.name)</h4>
+            <div class="sh-descr">
+                颜色:
+            </div>
+            <div class="mt20"><span data-type="price" class="sh-amount">¥ <i>#(x.price)</i></span>
+              <div class="fr dis-flex-around sh-opera">
+                <i data-type="minuse" class="iconfont icon-jianjia minuse"></i>
+                <input class="dis-none" value="#(x.product_id)" >
+                <input class="dis-none" value="#((x.product.stock))" >
+                <input type="tel" value="#(x.quantity)" data-type="number" class="number">
+                <i data-type="plus" class="iconfont icon-add plus"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+        #end
+      #end
+      </ul>
+      <div class="nav-space"></div>
+      <div class="dis-flex-between nav fee-fixed">
+        <div class="pl4">
+          <div id="selecAll" class="iconfont check-box"></div><span class="txt-5">全选</span>
+        </div>
+        <form method="post"
+              action="#(contextPath)/pay/createPay">
+          <div class="dd-child"><span class="txt-3">合计： </span><span id="feeAmount" class="fee-amount"> ¥</span><span class="txt-4">（包邮） </span>
+            #if(cart!="1")
+            <input class="dis-none" value="#(cart.cart_key)" name="cartKey" id="cart_key_1">
+            #end
+            <button class="btn-over">结算</button>
+          </div>
+        </form>
+      </div>
+      <ul class="nav dis-flex-around">
+        <li class="nav-list"><a href="#(contextPath)/index" class="icon-nav-on">
+          <div class="nav-icon icon-home"></div><span>首页</span></a></li>
+        <li class="nav-list"><a href="#(contextPath)/cart/index">
+          <div class="nav-icon icon-shoppingcart"></div><span>购物车</span></a></li>
+        <li class="nav-list"><a href="#(contextPath)/member/index">
+          <div class="nav-icon icon-host"></div><span>我的</span></a></li>
+      </ul>
+    </div>
+    <!--<script src="js/jquery-3.1.1.min.js"></script>-->
+    <script src="#(contextPath)/js/jquery-3.1.1.min.js"></script>
+    <script src="#(contextPath)/js/shoppingStore.js"></script>
+    <script>
+      (function(){
+      })();
+    </script>
+  </body>
+</html>

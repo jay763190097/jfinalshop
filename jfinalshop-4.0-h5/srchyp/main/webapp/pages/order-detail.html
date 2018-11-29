@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <script src="#(contextPath)/js/swiper.min.js"></script>
+    <script src="#(contextPath)/js/common.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><a href="#(contextPath)/member/list"><span>返回</span></a></div><span class="host-title">订单详情</span><span></span>
+        </div>
+      </div>
+      <div class="title-space"></div>
+      <div class="address dis-flex-between">
+        <div class="txt-left">
+          <div class="customer"><span>#(name)</span><span>#(phone)</span><span class="tag-mr">默认</span></div>
+          <div class="send-address">#(address)</div>
+        </div><i></i>
+      </div>
+      <div class="order-column mt20">
+        <div class="dis-flex-between order-infor plf4">
+          <div class="left-txt"><img src="#(contextPath)/img/shop.svg" alt="">
+            <h4>订单详情</h4><i class="iconfont icon-arrow store-arrow verti-mid"></i>
+          </div><span class="txt-2">#(status)</span>
+        </div>
+        #for(x:items)
+        <div class="dis-flex-between my-order">
+          <div><img src="http://114.55.93.111:8080/jfinalshop-4.0-web/#(x.thumbnail)" alt="" class="order-img">
+            <div class="order-info">
+              <h4>#(x.name)</h4><span>颜色分类：</span>
+            </div>
+          </div>
+          <div class="txt-right">
+            <div class="a-price">¥ #(x.price)</div>
+            <div class="o-price">¥ #(x.price)</div>
+            <div class="amount">x1</div>
+          </div>
+        </div>
+        #end
+        <div class="plf4 dis-flex-between order-detail">
+          <div>
+            订单编号</br>
+            交易方式</br>
+            商品总额</br>
+            快递服务：
+          </div>
+          <div class="txt-right"><span>#(sn)</br></span><span>银行卡支付</br></span><span>￥#(amount)</br></span><span> #(path)</span></div>
+        </div>
+      </div>
+      <div class="nav-space"></div>
+      <ul class="nav dis-flex-between">
+        <li class="nav-list pl60 amout-order"></li>
+        <li class="nav-list pr4">
+          <div class="btn-gray">联系商家</div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      (function(){
+      	
+      	
+      })();
+    </script>
+  </body>
+</html>

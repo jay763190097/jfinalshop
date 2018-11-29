@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/swiper.min.css">
+    <script src="#(contextPath)/js/jquery-3.1.1.min.js"></script>
+    <script src="#(contextPath)/js/index.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <input type="hidden" value="#(contextPath)" id="url">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="dis-flex-around top-column"><i class="iconfont icon-qrssreen dis-block clB7B7B7"></i>
+          <div class="search">
+            <input type="text" placeholder="搜索" class="search-input" id="search_1" ><i class="iconfont icon-search position-search clB7B7B7"></i>
+          </div><img src="#(contextPath)/img/message.svg" alt="二维码扫描" class="message">
+        </div>
+        <div class="info-menu" id="menu_1"><a href="index" class="active" id="gr">推荐</a></div>
+      </div>
+      <!-- banner图片滚动区域-->
+      <div class="banner">
+        <div class="swiper-container banner-swiper">
+          <div class="swiper-wrapper" id="wrapper_1">
+            <!--<div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner1.jpg" alt="" class="banner-img"></a></div>
+            <div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner2.jpg" alt="" class="banner-img"></a></div>
+            <div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner3.jpg" alt="" class="banner-img"></a></div>-->
+          </div>
+          <div class="swiper-pagination" ></div>
+        </div>
+      </div>
+      <div class="column-min">
+        <h4 class="dis-flex-between shoes-title"><span>爆品补货</span>
+          <div class="more-info"><span>更多</span><i class="iconfont icon-arrow more-arrow"></i></div>
+        </h4>
+        <ul class="list-column dis-flex-align" id="ul_1">
+          <!--<li class="list-detail"><a href="shops-detail.html"><img src="img/shoes.png" alt="商品" class="shoes-img"></a>
+            <div class="shoes-name"> <a href="shops-detail.html">商品名称商品称商品名称商品称商品名称商品称</a></div>
+            <div class="shoes-price">¥ 699<span>¥ 699</span></div>
+          </li>-->
+        </ul>
+      </div>
+
+      <ul class="nav dis-flex-around">
+        <li class="nav-list"><a href="#(contextPath)/index" class="icon-nav-on">
+            <div class="nav-icon icon-home"></div><span>首页</span></a></li>
+        <li class="nav-list"><a href="#(contextPath)/cart/index">
+            <div class="nav-icon icon-shoppingcart"></div><span>购物车</span></a></li>
+        <li class="nav-list"><a href="#(contextPath)/member/index">
+            <div class="nav-icon icon-host"></div><span>我的</span></a></li>
+      </ul>
+    </div>
+    <script src="#(contextPath)/js/swiper.min.js"></script>
+    <script type="text/javascript" src="#(contextPath)/js/jquery-1.9.1.min.js"></script>
+    <script>
+        findad();
+        function findad(){
+            $.post("http://114.55.93.111:8080/jfinalshop-4.0-api/api/index/ad",{"channel":resource},function (data) {
+                $.each(data.data,function(i, item){
+                    var html = "<div class='swiper-slide'> <a href='#'><img src="+"http://114.55.93.111:8080/jfinalshop-4.0-web"+item.path+" alt="+item.title+" class='banner-img'></a></div>";
+                    $("#wrapper_1").append(html);
+                })
+            });
+        }
+      var swiper = new Swiper('.swiper-container', {
+      	slidesPerView: 1,
+      	spaceBetween: 30,
+      	mousewheel: true,
+      	effect : 'fade',
+      	autoplay: true,
+      	pagination: {
+      		el: '.swiper-pagination',
+      	},
+      });
+      (function(){
+
+
+      })();
+
+        $(function(){
+            $("#search_1").on({
+                touchstart: function(e){
+                    window.location.href="#(contextPath)/search";
+                },
+                touchend: function(){
+                    return false;
+                }
+            })
+        });
+
+    </script>
+  </body>
+</html>

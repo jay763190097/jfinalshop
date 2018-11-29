@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/swiper.min.css">
+    <script src="#(contextPath)/js/jquery-3.1.1.min.js"></script>
+    <script src="#(contextPath)/js/common.js"></script>
+
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="plf4">
+        <div class="dis-flex-between top-column">
+          <div class="search-page">
+            <input type="search" placeholder="搜索" id="idNumber1" class="search-input"><i class="iconfont icon-search position-search clB7B7B7"></i>
+          </div><span class="cancel">取消</span>
+        </div>
+      </div>
+      <!-- 搜索结果区域-->
+      <div class="dis-none" id="ok">
+        <ul class="list-column dis-flex-wrap" id="append">
+        </ul>
+      </div>
+      <!-- 历史搜索结果-->
+      <div class="delete tag-history dis-flex-start" id="history"></div>
+      <div class="txt-center" id="his-dele"><img src="" style="width:.98rem;height:.92rem;display: inline-block;"/>清除记录</div>
+    </div>
+    <script src="#(contextPath)/js/swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+      	slidesPerView: 1,
+      	spaceBetween: 30,
+      	mousewheel: true,
+      	effect : 'fade',
+      	autoplay: true,
+      	pagination: {
+      		el: '.swiper-pagination',
+      	},
+      });
+      (function(){
+
+
+      })();
+
+   /*   $(document).delegate(".delete>div", "click", function() {
+          $("#idNumber1").val($(this).text());
+      });*/
+
+      /*搜索记录相关*/
+      //从localStorage获取搜索时间的数组
+      var hisTime;
+      //从localStorage获取搜索内容的数组
+      var hisItem;
+      //从localStorage获取最早的1个搜索时间
+      var firstKey;
+
+      function init() {
+          //每次执行都把2个数组置空
+          hisTime = [];
+          hisItem = [];
+          //模拟localStorage本来有的记录
+          //localStorage.setItem("a",12333);
+          //本函数内的两个for循环用到的变量
+          var i = 0
+          for(; i < localStorage.length; i++) {
+              if(!isNaN(localStorage.key(i))) {
+                  hisItem.push(localStorage.getItem(localStorage.key(i)));
+                  hisTime.push(localStorage.key(i));
+              }
+          }
+          i = 0;
+          //执行init(),每次清空之前添加的节点
+          $(".delete").html("");
+          for(; i < hisItem.length; i++) {
+              //alert(hisItem);
+              $(".delete").prepend('<span >' + hisItem[i] + '</span>')
+          }
+      }
+      init();
+
+      $("#idNumber1").on('keypress',function(e)  {
+          var keycode = e.keyCode;
+          if (keycode == "13"){
+              var value = $("#idNumber1").val();
+              $.ajax({
+                  type : "POST",
+                  url : "#(contextPath)/search/secrchKey",
+                  data : "keyword="+value,
+                  dataType : "json",
+                  success : function(result) {
+                      $("#append li").remove();
+                      $.each(result.message,function(i, item){
+                          var html = "<li class='list-detail'><a href='#(contextPath)/goods/detail?id="+item.defaultProduct.id+"'><img src='"+"http://114.55.93.111:8080/jfinalshop-4.0-web"+item.image+"' alt='"+item.name+"' class='shoes-img'></a>"
+                              +"<div class='shoes-name'> <a href='#(contextPath)/goods/detail?id="+item.id+"'>"+item.name+"</a></div>"
+                              +"<div class='shoes-price'>¥ "+item.defaultProduct.price+"<span>¥ "+item.defaultProduct.market_price+"</span></div></li>";
+                          $("#append").append(html);
+                      })
+                      $("#ok").removeAttr("class");
+                  },
+                  error:function(msg){
+                      alert("服务器错误");
+                  }
+              });
+
+              var time = (new Date()).getTime();
+              //输入的内容localStorage有记录
+              if($.inArray(value, hisItem) >= 0) {
+                  for(var j = 0; j < localStorage.length; j++) {
+                      if(value == localStorage.getItem(localStorage.key(j))) {
+                          localStorage.removeItem(localStorage.key(j));
+                      }
+                  }
+                  localStorage.setItem(time, value);
+              }
+              //输入的内容localStorage没有记录
+              else {
+                  //由于限制了只能有6条记录，所以这里进行判断
+                  if(hisItem.length > 10) {
+                      firstKey = hisTime[0]
+                      localStorage.removeItem(firstKey);
+                      localStorage.setItem(time, value);
+                  } else {
+                      localStorage.setItem(time, value)
+                  }
+              }
+              init();
+              //正式的时候要提交的！！！
+              //$("#form1").submit()
+          }
+      });
+
+      //清除记录功能
+      $("#his-dele").click(function() {
+          var f = 0;
+          for(; f < hisTime.length; f++) {
+              localStorage.removeItem(hisTime[f]);
+          }
+          init();
+      });
+
+    </script>
+  </body>
+</html>

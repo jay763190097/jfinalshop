@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="32px" viewBox="0 0 36 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / shop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.2.1-我的订单" transform="translate(-36.000000, -536.000000)" stroke="#888888">
+            <g id="待付款订单" transform="translate(0.000000, 512.000000)">
+                <g id="icon-/-shop" transform="translate(30.000000, 16.000000)">
+                    <g stroke-width="1" fill-rule="evenodd" transform="translate(7.000000, 9.000000)">
+                        <path d="M5.01758618,13.8830549 C6.41126265,13.8830549 7.38843811,13.0310263 7.94911255,12.3627685 C8.52580627,13.0477327 9.519001,13.9164678 10.944716,13.9331742 C12.4505274,13.9331742 13.5238184,13.1145585 14.1165314,12.49642 C14.3568205,12.7637232 15.4,14 17,14 C18.6,14 19.6271602,12.7637232 19.8834686,12.49642 C20.4761816,13.097852 21.5494726,13.9331742 22.9912069,13.9331742 C24.4649797,13.9164678 25.4741937,13.0477327 26.0508874,12.3627685 C26.6115619,13.0477327 27.5887373,13.8830549 28.9824138,13.8830549 C29.4629919,13.8830549 29.9756086,13.7828162 30.4722059,13.5656325 C33.1634432,12.4295943 33.1954818,9.72315036 32.8430578,8.45346062 C32.8270386,8.42004773 32.8270386,8.38663484 32.8110193,8.35322196 L30,0 C29.9795555,0 21.3128888,0 4,0 L1.18898069,8.35322196 C1.17296142,8.38663484 1.15694215,8.42004773 1.15694215,8.45346062 C0.804518216,9.72315036 0.836556756,12.4295943 3.52779408,13.5656325 C4.02439145,13.7828162 4.52098881,13.8830549 5.01758618,13.8830549 Z" id="Shape" stroke-width="2" fill-rule="nonzero"></path>
+                        <path d="M0,30 L34,30" id="Path-2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polyline id="Path-3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="4 18.0414509 4 30 30 30 30 18"></polyline>
+                        <polygon id="Path-3-Copy" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="13 29.9654576 13 20 21 20 21 30"></polygon>
+                    </g>
+                    <path d="M16,9 L15,22" id="Path-6" stroke-width="2"></path>
+                    <path d="M21.5,9 L21,22" id="Path-6-Copy" stroke-width="2"></path>
+                    <path d="M32,9 L33,22" id="Path-6-Copy-2" stroke-width="2"></path>
+                    <path d="M27,9 L27,22" id="Path-6-Copy-3" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

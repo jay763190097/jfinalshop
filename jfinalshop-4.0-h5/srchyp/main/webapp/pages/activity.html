@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>生成订单</title>
+    <link rel="stylesheet" type="text/css" href="css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><span>返回</span></div><span class="host-title">活动标题</span><span></span>
+        </div>
+      </div>
+      <div class="swiper-container banner-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner1.jpg" alt="" class="banner-img"></a></div>
+          <div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner2.jpg" alt="" class="banner-img"></a></div>
+          <div class="swiper-slide"> <a href="shops-detail.html"><img src="img/banner3.jpg" alt="" class="banner-img"></a></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <ul class="list-column dis-flex-wrap">
+        <li class="column-two mt30"><a href="shops-detail.html"><img src="img/shoes.png" alt="商品" class="shoes-img"></a>
+          <div class="shoes-name"> <a href="shops-detail.html">商品名称商品称商品名称商品称商品名称商品称</a></div>
+          <div class="shoes-price">¥ 699<span>¥ 699</span></div>
+        </li>
+        <li class="column-two mt30"><a href="shops-detail.html"><img src="img/shoes.png" alt="商品" class="shoes-img"></a>
+          <div class="shoes-name"> <a href="shops-detail.html">商品名称商品称商品名称商品称商品名称商品称</a></div>
+          <div class="shoes-price">¥ 699<span>¥ 699</span></div>
+        </li>
+        <li class="column-two mt30"><a href="shops-detail.html"><img src="img/shoes.png" alt="商品" class="shoes-img"></a>
+          <div class="shoes-name"> <a href="shops-detail.html">商品名称商品称商品名称商品称商品名称商品称</a></div>
+          <div class="shoes-price">¥ 699<span>¥ 699</span></div>
+        </li>
+        <li class="column-two mt30"><a href="shops-detail.html"><img src="img/shoes.png" alt="商品" class="shoes-img"></a>
+          <div class="shoes-name"> <a href="shops-detail.html">商品名称商品称商品名称商品称商品名称商品称</a></div>
+          <div class="shoes-price">¥ 699<span>¥ 699</span></div>
+        </li>
+      </ul>
+    </div>
+    <script src="js/swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+      	slidesPerView: 1,
+      	spaceBetween: 30,
+      	mousewheel: true,
+      	effect : 'fade',
+      	autoplay: true,
+      	pagination: {
+      		el: '.swiper-pagination',
+      	},
+      });
+    </script>
+  </body>
+</html>

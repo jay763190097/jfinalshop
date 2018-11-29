@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="47px" height="46px" viewBox="0 0 47 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>购物车icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="14" cy="42" r="5"></circle>
+        <circle id="path-2" cx="33" cy="42" r="5"></circle>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TAB-BAR/2" transform="translate(-351.000000, -11.000000)">
+            <g id="TAB-BAR">
+                <g id="购物车" transform="translate(339.000000, 10.000000)">
+                    <g id="购物车icon" transform="translate(12.000000, 0.000000)">
+                        <polyline id="Path-2" stroke="#9A98E0" stroke-width="2" stroke-linecap="round" points="1 2 5 6 7.98387516 33 39 33"></polyline>
+                        <path d="M10.1538462,9 L44.1246851,9 C45.2292546,9 46.1246851,9.8954305 46.1246851,11 C46.1246851,11.2374882 46.0823872,11.4730783 45.9997729,11.6957339 L40.6923077,26 L8,26 L6,9 L10.1538462,9 Z" id="Path-3" fill="#9A98E0"></path>
+                        <g id="Oval">
+                            <use fill="#9A98E0" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <circle stroke="#9A98E0" stroke-width="2" cx="14" cy="42" r="4"></circle>
+                        </g>
+                        <g id="Oval-Copy">
+                            <use fill="#9A98E0" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <circle stroke="#9A98E0" stroke-width="2" cx="33" cy="42" r="4"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

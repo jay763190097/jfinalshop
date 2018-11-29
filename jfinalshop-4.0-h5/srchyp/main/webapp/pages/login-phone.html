@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>手机号登陆</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+
+  </head>
+  <body class="body-fff">
+    <div class="wrap txt-left">
+      <div class="dis-flex-between back-top">
+        <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><a href="#(contextPath)/"><span>返回</span></a></div><span></span><span></span>
+      </div>
+      <div class="wrap-padding">
+        <h3 class="app-name">手机号登录</h3>
+        <div class="login-intr">如果这是您第一次登录，系统将自动创建账号</div>
+        <form action="#(contextPath)/account/submit" name="phongLogin" id="phongLogin">
+          <ul class="phone-lg">
+            <li class="dis-flex-between">
+              <input id="tel_1"  name="username" type="tel" placeholder="输入手机号" maxlength="11"><span id="getCode"  class="get-code" type="button" >获取验证码</span>
+            </li>
+            <li>
+              <input type="tel" name="smscode" placeholder="短信验证码">
+            </li>
+          </ul>
+          <div class="login-intr">#(error)</div>
+          <button class="btn-login">登录</button>
+        </form>
+      </div>
+    </div>
+    <script src="#(contextPath)/js/jquery-3.1.1.min.js"></script>
+    <script src="#(contextPath)/js/common.js"></script>
+    <script src="#(contextPath)/js/login.js"></script>
+    <script>
+        (function(){
+        })();
+    </script>
+  </body>
+</html>

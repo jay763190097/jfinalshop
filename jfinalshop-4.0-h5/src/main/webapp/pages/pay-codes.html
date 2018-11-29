@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>支付二维码</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="#(contextPath)/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="#(contextPath)/js/jquery.qrcode.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+     /* #tc {
+        margin: 0px auto; width:250px;height:250px;
+      }*/
+
+     #wxshare {
+       font-weight: normal;
+       background: #3d85c6;
+       border-radius: 5px;
+       padding: 5px 7px;
+       color: #fff;
+       border: none;
+     }
+     #tc {
+       text-align: center;
+     }
+
+     .green {
+       color: #2d7104;
+     }
+     #myPopup small {
+       padding: 8px;
+       border-bottom: 1px solid #ccc;
+     }
+     #qrcodeImg {
+       margin-top: 20px;
+       padding: 3px;
+       border: 1px solid #ccc;
+     }
+     #tc {
+       margin: 0px auto; width:250px;height:250px;
+     }
+    </style>
+    <script>
+       /* $(function(){
+            var message = "#(message)";
+            if(message!="操作成功"){
+                alert(message);
+            }
+            var qrcode ="#(qrcode)";
+            if(qrcode!=null&&qrcode!=""){
+                $('#output').qrcode("#(qrcode)");
+            }
+        })*/
+       $(function(){
+           var message = "#(message)";
+           if(message!="操作成功"){
+               alert(message);
+           }
+           var qrcode ="#(qrcode)";
+           if(qrcode!=null&&qrcode!=""){
+               $('#wxshare').on("tap",function() {
+                   var qrcode = $('#output').qrcode({
+                       render: "canvas", //也可以替换为table
+                       width: 120,
+                       height: 120,
+                       text: "#(qrcode)"/*可以通过ajax请求动态设置*/
+                   }).hide();
+                   //将生成的二维码转换成图片格式
+                   var canvas = qrcode.find('canvas').get(0);
+                   $('#qrcodeImg').attr('src', canvas.toDataURL('image/jpg'));
+               });
+           }
+
+
+       })
+       function recharge() {
+           window.location.href="#(contextPath)/";
+       }
+    </script>
+  </head>
+  <body>
+  <!--<div class="wrap">
+    <div class="tt-title">订单二维码</div>
+    <div id="tc"><span ><i id="output"></i></span>
+    </div>
+
+    <div class="confirm-pay pay-over"><h4 class="txt-1">扫码支付</h4><a href="#(contextPath)/">完成支付</a></div>
+  </div>-->
+  <div class="wrap">
+    <div class="tt-title">订单二维码</div>
+    <a id='wxshare' data-rel="popup" href="#myPopup" class="ui-btn ui-corner-all" data-transition="slidedown"><span>点击查看二维码</span></a>
+    <div data-role="popup" id="myPopup" data-position-to="window" class="ui-content">
+      <div id="tc">
+        <small class="green">长按二维码保存图片</small>
+        <span ><i id="output"></i></span>
+        <img src="" id="qrcodeImg"/><br>
+      </div>
+    </div>
+  </div>
+  <div class="confirm-pay pay-over"><button onclick="recharge()">完成支付</button></div>
+    <script>
+      (function(){
+      
+      	
+      })();
+    </script>
+  </body>
+</html>

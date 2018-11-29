@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>我的资料</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css">
+    <link rel="stylesheet" href="#(contextPath)/css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="#(contextPath)/css/home.css">-->
+    <!--<script src="#(contextPath)/js/common.js"></script>-->
+    <script src="http://dreamsky.github.io/main/blog/common/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="#(contextPath)/js/up.js"></script>-->
+    <script>
+        function editer() {
+            $("#show").css("display","none");
+            $("#inner").css("display","block");
+        }
+
+        function check() {
+            // var mad_user_jur  = $('input[name="root"]:checked').val();
+            //console.log(mad_user_jur);
+            if(!confirm("是否确认修改?")){
+                return false;
+            };
+            $("#show").css("display","block");
+            $("#inner").css("display","none");
+            var username =$("#username").val();
+            var nickname =$("#nickname").val();
+            var gender =$("#gender").val();
+            var file =$("#file").val();
+            var token =$("#token").val();
+            //enctype="multipart/form-data"
+            $.ajax({
+                type : "POST",
+                url : "http://114.55.93.111:8080/jfinalshop-4.0-api/api/account/modifyInformation",
+                data : "username="+username+ "&nickname="+nickname+ "&gender="+gender+ "&token="+token,
+                dataType : "json",
+                success : function(result) {
+                    alert(result.message);
+                },
+                error:function(msg){
+                    alert("服务器错误");
+                }
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><span>返回 </span></div><span class="host-title">我的资料</span><span></span>
+        </div>
+      </div>
+      <div class="title-space"></div><a href="#" class="dis-flex-between head-info hover"><span class="txt-head">头像</span>
+      <div class="pr4"><img src="#(contextPath)/img/avarta.png" alt="" class="host-head"><i class="iconfont icon-arrow store-arrow verti-mid"></i></div></a>
+      <ul class="head-info mt20" id="show"><a href="#">
+        <li class="dis-flex-between"><span class="txt-head">用户ID</span><i>#(username)</i></li></a><a href="#">
+        <li class="dis-flex-between"><span class="txt-head">昵称</span><i>#(nickname)</i></li></a><a href="#">
+        <li class="dis-flex-between"><span class="txt-head">性别</span><i>#(gender)</i></li></a>
+        <div class="confirm-pay pay-over" id="editer" onclick="editer()">编辑</div>
+      </ul>
+      <div class="head-info mt20" id="inner" style="display: none">
+        <input type="hidden" name="token" value="#(token)" id="token">
+        <!--<label class="aui-label-control">
+          头像 <em>*</em>
+          <span>小于5M</span>
+        </label>
+          <div class="aui-content-img-box aui-content-full">
+            <div class="aui-photo aui-up-img clear">
+              <section class="aui-file-up fl">
+                <img src="http://localhost:8080/jfinalshop-4.0-h5/img/up.png" class="add-img">
+                <input type="file" name="caseImage" enctype="multipart/form-data"  id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
+              </section>
+            </div>
+          </div>-->
+        <div style="width: 300px; height: 50px; margin: 50px auto;">
+<!--
+          <input type="file" name="caseImage" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
+-->
+          <input type="text"  name="username" id="username"/>
+          <label alt="请输入用户ID" placeholder="用户ID"></label>
+          <input type="text" id="nickname" name="nickname"/>
+          <label alt="请输入用户昵称" placeholder="用户昵称" ></label>
+          <input type="text"  name="gender" id="gender"/>
+          <label alt="请输入用户性别" placeholder="用户性别" ></label>
+        </div>
+        <div class="footer-banner" style="width:728px; margin:200px auto 0"></div>
+        <div class="nav confirm-pay">
+          <button type="submit" class="btn-over"  onclick="check()"><span>确认修改</span></button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(){
+      	
+      	
+      })();
+    </script>
+  </body>
+</html>

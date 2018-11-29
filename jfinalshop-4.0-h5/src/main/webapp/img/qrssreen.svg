@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>QR_Code Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1-商城首页" transform="translate(-30.000000, -62.000000)" fill="#B7B7B7">
+            <g id="Bar">
+                <path d="M54,100 L59,100 L59,102 L52,102 L52,84 L66,84 L66,88 L68,88 L68,84 L70,84 L70,89 L64,89 L64,86 L54,86 L54,100 Z M60.9950265,91 L60.9950265,94 L56,94 L56,91.0030131 L60.9950265,91 Z M59,96 L59,100 L54.0049735,100 L54.0049735,96.0050218 L59,96 Z M69.9970085,101.998011 L61,101.998011 L61,100 L70,100 L69.9970085,101.998011 Z M69.9980057,97.9980106 L64,97.9980106 L64,96 L70,96 L69.9980057,97.9980106 Z M64,89 L70,89 L70,94 L64,94 L64,89 Z M54,89 L54,86 L61,86 L61,89 L54,89 Z M30,62 L48,62 L48,80 L30,80 L30,62 Z M32,78 L46,78 L46,64 L32,64 L32,78 Z M36,68 L42,68 L42,74 L36,74 L36,68 Z M52,62 L70,62 L70,80 L52,80 L52,62 Z M54,78 L68,78 L68,64 L54,64 L54,78 Z M58,68 L64,68 L64,74 L58,74 L58,68 Z M30,84 L48,84 L48,102 L30,102 L30,84 Z M32,100 L46,100 L46,86 L32,86 L32,100 Z M36,90 L42,90 L42,96 L36,96 L36,90 Z" id="QR_Code-Copy"></path>
+            </g>
+        </g>
+    </g>
+</svg>

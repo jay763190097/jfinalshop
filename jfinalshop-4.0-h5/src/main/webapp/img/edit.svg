@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.3.1-收货地址" transform="translate(-680.000000, -407.000000)">
+            <g id="收货地址-copy" transform="translate(0.000000, 334.000000)">
+                <g id="edit" transform="translate(680.000000, 73.000000)">
+                    <path d="M24.6953648,2.11578584 L2.13044212,24.2190082 C1.53281767,24.8044046 1,26.0726948 1,26.9108218 L1,33.9717492 C1,34.5325496 1.44575696,34.9765319 2.00562482,34.9765319 L9.06951804,34.9765319 C9.91524764,34.9765319 11.1746028,34.4471024 11.7637252,33.84652 L33.8836478,11.2963073 C34.2737853,10.8985806 34.2710362,10.2527373 33.8780773,9.86003461 L26.134456,2.12146136 C25.738647,1.72591035 25.0957189,1.7236233 24.6953648,2.11578584 Z" id="Stroke-107" stroke="#92B9F1" stroke-width="2"></path>
+                    <path d="M19.164467,7.832472 L28.1674048,16.8354097" id="Stroke-108" stroke="#92B9F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M0,39 L0,39 C-6.76353751e-17,38.4477153 0.44771525,38 1,38 L39,38 C39.5522847,38 40,38.4477153 40,39 L40,39 C40,39.5522847 39.5522847,40 39,40 L1,40 C0.44771525,40 6.76353751e-17,39.5522847 0,39 Z" id="Path-3" fill="#92B9F1" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

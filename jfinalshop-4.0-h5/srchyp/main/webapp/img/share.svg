@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>分享</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1.2-商品详情" transform="translate(-680.000000, -63.000000)">
+            <g id="分享" transform="translate(680.000000, 63.000000)">
+                <path d="M18,1 L18,1 C18,1.55228475 17.5522847,2 17,2 L2,2 L2,38 L38,38 L38,23 C38,22.4477153 38.4477153,22 39,22 L39,22 C39.5522847,22 40,22.4477153 40,23 L40,38 C40,39.1045695 39.1045695,40 38,40 L2,40 C0.8954305,40 1.3527075e-16,39.1045695 0,38 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 L17,0 C17.5522847,-1.01453063e-16 18,0.44771525 18,1 Z" id="Combined-Shape" fill="#B7B7B7"></path>
+                <path d="M20,20 L39,1" id="Path-2" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M39,15 L39,1" id="Path-3" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M25,1 L39,1" id="Path-4" stroke="#B7B7B7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

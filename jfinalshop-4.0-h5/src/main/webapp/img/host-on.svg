@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="42px" viewBox="0 0 40 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>我的</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="16" y="3" width="16" height="24" rx="8"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TAB-BAR/3" transform="translate(-586.000000, -13.000000)">
+            <g id="TAB-BAR">
+                <g id="我的" transform="translate(582.000000, 10.000000)">
+                    <path d="M24,45 C35.045695,45 44,41 44,38 C44,31.5025324 35.045695,26 24,26 C12.954305,26 4,31.5025324 4,38 C4,41 12.954305,45 24,45 Z" id="Oval-2" fill="#9A98E0"></path>
+                    <g id="Rectangle-3">
+                        <use fill="#9A98E0" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect x="16" y="3" width="16" height="24" rx="8"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

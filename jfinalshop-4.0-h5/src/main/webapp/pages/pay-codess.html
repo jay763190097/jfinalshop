@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>支付二维码</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="#(contextPath)/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="#(contextPath)/js/jquery.qrcode.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+     /* #tc {
+        margin: 0px auto; width:250px;height:250px;
+      }*/
+
+     #wxshare {
+       font-weight: normal;
+       background: #3d85c6;
+       border-radius: 5px;
+       padding: 5px 7px;
+       color: #fff;
+       border: none;
+     }
+     #tc {
+       text-align: center;
+     }
+
+     .green {
+       color: #2d7104;
+     }
+     #myPopup small {
+       padding: 8px;
+       border-bottom: 1px solid #ccc;
+     }
+     #qrcodeImg {
+       margin-top: 20px;
+       padding: 3px;
+       border: 1px solid #ccc;
+     }
+     #tc {
+       margin: 0px auto; width:250px;height:250px;
+     }
+    </style>
+    <script>
+        var message = "#(message)";
+        $(function(){
+            if(message!="操作成功"){
+                $("#pay").html(message);
+                var html = "<button onclick=\"reback()\">返回订单</button>"
+                $("#html").append(html);
+            }else {
+                var html = "<button onclick=\"index()\">完成支付</button>"
+                $("#html").append(html);
+            }
+        })
+       var qrcode ="#(qrcode)";
+           function recharge() {
+            if(qrcode!=null&&qrcode!=""){
+               window.location.href="#(qrcode)";
+           }
+       }
+        function index() {
+            window.location.href="#(contextPath)/";
+        }
+        function reback() {
+            window.location.href="#(contextPath)/member/list";
+        }
+    </script>
+  </head>
+  <body>
+  <!--<div class="wrap">
+    <div class="tt-title">订单二维码</div>
+    <div id="tc"><span ><i id="output"></i></span>
+    </div>
+
+    <div class="confirm-pay pay-over"><h4 class="txt-1">扫码支付</h4><a href="#(contextPath)/">完成支付</a></div>
+  </div>-->
+  <div class="confirm-pay pay-over"><button onclick="recharge()" id="pay">去客户端支付</button></div>
+  <div class="confirm-pay pay-over" id="html"></div>
+    <script>
+      (function(){
+      
+      	
+      })();
+    </script>
+  </body>
+</html>

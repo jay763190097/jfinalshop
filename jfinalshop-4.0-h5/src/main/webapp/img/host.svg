@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="42px" viewBox="0 0 40 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>我的</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M24,45 C35.045695,45 44,41 44,38 C44,31.5025324 35.045695,26 24,26 C12.954305,26 4,31.5025324 4,38 C4,41 12.954305,45 24,45 Z" id="path-1"></path>
+        <rect id="path-2" x="16" y="3" width="16" height="24" rx="8"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TAB-BAR/1" transform="translate(-586.000000, -13.000000)">
+            <g id="TAB-BAR">
+                <g id="我的" transform="translate(582.000000, 10.000000)">
+                    <g id="Oval-2">
+                        <use fill-opacity="0" fill="#9A98E0" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#868686" stroke-width="2" d="M24,44 C33.7416542,44 43,40.4826714 43,38 C43,32.1437565 34.4907231,27 24,27 C13.5092769,27 5,32.1437565 5,38 C5,40.4826714 14.2583458,44 24,44 Z"></path>
+                    </g>
+                    <g id="Rectangle-3">
+                        <use fill-opacity="0" fill="#9A98E0" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#868686" stroke-width="2" x="17" y="4" width="14" height="22" rx="7"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

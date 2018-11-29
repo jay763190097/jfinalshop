@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <script src="#(contextPath)/js/jquery-3.1.1.min.js"></script>
+    <script src="#(contextPath)/js/swiper.min.js"></script>
+    <script src="#(contextPath)/js/common.js"></script>
+    <script src="#(contextPath)/js/index.js"></script>
+    <style>
+      .order-column  a {
+        text-decoration: none;
+      }
+    </style>
+    <script>
+        function delate(sn) {
+            var token = $("#total").val();
+            $.ajax({
+                type : "POST",
+                url : "http://114.55.93.111:8080/jfinalshop-4.0-api/api/member/order/cancel",
+                data : "token="+token+"&sn="+sn,
+                dataType : "json",
+                success : function(result) {
+                    console.log(result.datum);
+                    window.location.href="#(contextPath)/member/list";
+                },
+                error:function(msg){
+                    alert("服务器错误");
+                }
+            });
+        }
+        function toDecimal(x) {
+            var f = parseFloat(x);
+            if (isNaN(f)) {
+                return false;
+            }
+            var f = Math.round(x*100)/100;
+            var s = f.toString();
+            var rs = s.indexOf('.');
+            if (rs < 0) {
+                rs = s.length;
+                s += '.';
+            }
+            while (s.length <= rs + 2) {
+                s += '0';
+            }
+            return s;
+        }
+        function quit(attr) {
+            var token = $("#total").val();
+            $("#all").removeClass();
+            $(this).attr("class","menu-on");
+            $.ajax({
+                type : "POST",
+                url : "http://114.55.93.111:8080/jfinalshop-4.0-api/api/member/order/list",
+                data : "token="+token+"&status="+attr+"&channel="+resource,
+                dataType : "json",
+                success : function(result) {
+                    list = result.datum.list;
+                    $("#lists div").remove();
+                    $("#lists a").remove();
+                    //var result="";
+                    $.each(list,function(i,item){
+                        var html="<div class=\"dis-flex-between order-infor plf4\">\n" +
+                            "          <div class=\"left-txt\"><img src=\"#(contextPath)/img/shop.svg\" alt=\"\">\n" +
+                            "            <h4>订单详情</h4><i class=\"iconfont icon-arrow store-arrow verti-mid\">"+item.sn+"</i>\n" +
+                            "          </div><span class=\"txt-2\" id=\"sts\" >"+item.status_name+"</span>\n" +
+                            "        </div>\n" +
+                            "        <a href=\"#(contextPath)/member/viwe?sn="+item.sn+"&&status="+item.status_name+"\"><div class=\"dis-flex-between my-order\" id=\"adds"+i+"\">\n" +
+                            "         </div>"+
+                            "         </a>\n" +
+                            "      <div class=\"btn-column oh\" style=\"display: block\" id=\"showsed"+i+"\"></div>\n" +"";
+
+                        $("#lists").append(html);
+                        var htmls="";
+                        $.each(item.order_items,function(j,items){
+                           /* var productid=items.product_id;
+                            var quantity = items.quantity;
+                            result += productid+','+quantity+';';*/
+                            var price = toDecimal(items.price);
+                            htmls +=
+                                "          <div>\n" +
+                                "            <img src=\"http://114.55.93.111:8080/jfinalshop-4.0-web"+items.thumbnail+"\" alt=\"\" class=\"order-img\">\n" +
+                                "            <div class=\"order-info\">\n" +
+                                "              <h4>"+items.name+"</h4>\n" +
+                                "              <span>颜色分类:</span>\n" +
+                                "            </div>\n" +
+                                "            <div class=\"txt-right\">\n" +
+                                "              <div class=\"a-price\">"+"¥"+ price+"</div>\n" +
+                                "              <div class=\"o-price\">"+"¥"+ price+"</div>\n" +
+                                "              <div class=\"amount\">"+"x"+items.quantity+"</div>\n" +
+                                "            </div>\n" +
+                                "        </div>"
+                            $("#adds"+i).append(htmls);
+                            if(item.order_items.length>1){
+                                $("#ringht").removeClasses();
+                            }
+                        });
+                        var htmlss="";
+                        var sns = item.sn;
+                        if(item.status_name=='等待付款'){
+                            htmlss+="<a class=\"btn-purple ml20\" href=\"#(contextPath)/pay/continuePay?type=continue&&oldSn="+sns+"\">继续付款</a>" +
+                                "<a class=\"btn-purple ml20\" onclick=\"+delate("+sns+")\">订单取消</a>"
+                        }
+                        $("#showsed"+i).append(htmlss);
+                    });
+
+                },
+                error:function(msg){
+                    alert("服务器错误");
+                }
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 顶部搜索和导航栏区域-->
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><a href="#(contextPath)/member"><span>返回</span></a></div><span class="host-title">我的订单</span><span></span>
+        </div>
+        <ul class="order-menu oh">
+          <li><a  id="all" href="#(contextPath)/member/list" class="menu-on">全部</a></li>
+          <li><a onclick="quit('unfinished')">待完成</a></li>
+          <li><a onclick="quit('completed')">已完成</a></li>
+          <li><a onclick="quit('allCanceled')">已取消</a></li>
+        </ul>
+      </div>
+      <input type="hidden" value="#(token)" id="total">
+      <div class="order-column mt12" id="lists">
+        #for(x:list)
+        <div class="dis-flex-between order-infor plf4">
+          <div class="left-txt"><img src="#(contextPath)/img/shop.svg" alt="">
+            <h4>订单详情</h4><i class="iconfont icon-arrow store-arrow verti-mid">#(x.sn)</i>
+          </div><span class="txt-2" id="sts" >#(x.status_name)</span>
+        </div>
+        <a href="#(contextPath)/member/viwe?sn=#(x.sn)&&status=#(x.status_name)">
+          <div class="dis-flex-between my-order">
+          #for(yy:x.order_items)
+          <div>
+            <img src="http://114.55.93.111:8080/jfinalshop-4.0-web#(yy.thumbnail)" alt="" class="order-img">
+            <div class="order-info">
+              <h4>#(yy.name)</h4>
+              <span>颜色分类:</span>
+            </div>
+            #if((for.size)>1)
+            <div class="">
+              <div class="a-price">¥#(yy.price)</div>
+              <div class="o-price">¥#(yy.price)</div>
+              <div class="amount">x#(yy.quantity)</div>
+            </div>
+            #else
+            <div class="txt-right">
+              <div class="a-price">¥#(yy.price)</div>
+              <div class="o-price">¥#(yy.price)</div>
+              <div class="amount">x#(yy.quantity)</div>
+            </div>
+            #end
+          </div>
+          #end
+        </div></a>
+          #if((x.status_name) =="等待付款")
+          <div class="btn-column oh" style="display: block" ><a class="btn-purple ml20" href="#(contextPath)/pay/continuePay?type=continue&&oldSn=#(x.sn)">继续付款</a><a class="btn-purple ml20" onclick="delate('#(x.sn)')">订单取消</a></div>
+        #end
+        #end
+      </div>
+
+    </div>
+    <script>
+      (function(){
+      	
+      	
+      })();
+    </script>
+  </body>
+</html>

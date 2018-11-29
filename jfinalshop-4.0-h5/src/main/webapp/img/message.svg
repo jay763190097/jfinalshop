@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="38px" viewBox="0 0 40 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>消息icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M40,28 L40,35.4208712 C40,36.5254407 39.1045695,37.4208712 38,37.4208712 C37.6298804,37.4208712 37.2670205,37.3181665 36.9518051,37.1241878 L25.375,30 L2,30 C0.8954305,30 2.09738034e-15,29.1045695 0,28 L0,2 C-1.3527075e-16,0.8954305 0.8954305,2.02906125e-16 2,0 L38,-4.4408921e-16 C39.1045695,-6.46995335e-16 40,0.8954305 40,2 L40,28 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.1-商城首页" transform="translate(-680.000000, -63.000000)">
+            <g id="Bar">
+                <g id="消息icon" transform="translate(680.000000, 63.000000)">
+                    <g id="Combined-Shape">
+                        <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#B7B7B7" stroke-width="2" d="M39,35.4208712 L39,2 C39,1.44771525 38.5522847,1 38,1 L2,1 C1.44771525,1 1,1.44771525 1,2 L1,28 C1,28.5522847 1.44771525,29 2,29 L25.6580422,29 L37.4759026,36.2725295 C37.6335103,36.3695188 37.8149402,36.4208712 38,36.4208712 C38.5522847,36.4208712 39,35.9731559 39,35.4208712 Z"></path>
+                    </g>
+                    <circle id="Oval-4" fill="#B7B7B7" cx="9" cy="15" r="3"></circle>
+                    <circle id="Oval-4-Copy-2" fill="#B7B7B7" cx="20" cy="15" r="3"></circle>
+                    <circle id="Oval-4-Copy-3" fill="#B7B7B7" cx="31" cy="15" r="3"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <title>生成订单</title>
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/cssset.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="#(contextPath)/css/main.css">
+    <script src="#(contextPath)/js/swiper.min.js"></script>
+    <script src="#(contextPath)/js/common.js"></script>
+    <style>
+      .txt-left a{
+        ext-decoration: none;
+      }
+      .back-txt a{
+        ext-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top-fixed">
+        <div class="dis-flex-between back-top">
+          <div goBack="back" id="back" class="back-txt"><i class="iconfont icon-arrow dis-inlineblock back-arrow"></i><a href="#(contextPath)/cart"><span>返回</span></a></div><span class="host-title">生成订单</span><span></span>
+        </div>
+      </div>
+      <div class="title-space"></div>
+      <div class="address dis-flex-between">
+        <div class="txt-left"><a href="#(contextPath)/receiver/index">
+          <input type="hidden" value="#(id)" name="id">
+          <div class="customer"><span>#(name)</span><span>#(phone)</span><span class="tag-mr">默认</span></div>
+          <div class="send-address" >#(area_name)--#(address)</div></a>
+        </div><i class="iconfont icon-arrow more-arrow"></i>
+      </div>
+      <h4 class="order-title plf4 mt20">商品列表	</h4>
+      #for(x:detail)
+      <ul class="order-list plf4"> 
+        <li class="dis-flex-between order-li">
+          <div><img src="http://114.55.93.111:8080/jfinalshop-4.0-web#(x.thumbnail)" alt="" class="order-img">
+            <div class="order-info">
+              <h4>#(x.name)</h4><span>颜色分类:</span>
+            </div>
+          </div>
+          <div class="txt-right">
+            <div class="a-price">¥ #(x.price)</div>
+            <div class="o-price">¥ #(x.price)</div>
+            <div class="amount">x#(x.quantity)</div>
+          </div>
+        </li>
+      </ul>
+      #end
+      <ul class="plf4 order-item mt20">
+        <li class="dis-flex-between"><span class="item-name">商品合计</span><span class="item-info">￥#(orderTotal)</span></li>
+        <li class="dis-flex-between"><span class="item-name">快递服务</span><span class="item-info">包邮</span></li>
+      </ul>
+      <div class="nav-space"></div>
+      <ul class="nav dis-flex-between">
+        <li class="nav-list pl60 amout-order">合计: <span>¥ #(orderTotal)</span></li>
+        <form method="post" action="#(contextPath)/pay/payment">
+          <li class="nav-list" >
+            <input type="hidden" value="#(cardtoken)" name="param1">
+            <input type="hidden" value="#(name)" name="param2">
+            <input type="hidden" value="#(phone)" name="param3">
+            <input type="hidden" value="#(area_name)--#(address)" name="param4">
+            <input type="hidden" value="#(id)" name="param5">
+            <button type="submit" class="btn-over"><span> 提交订单</span></button>
+          </li>
+        </form>
+      </ul>
+    </div>
+    <script>
+      (function(){
+      
+      	
+      })();
+    </script>
+  </body>
+</html>
